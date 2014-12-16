@@ -18,6 +18,7 @@ BP.menutoggle = function($) {
 
 	self.FooBar = function() {
 
+		trigger.toggleClass('active');
 		element.toggleClass('active');
 		console.log("Foo");
 

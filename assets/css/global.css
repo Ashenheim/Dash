@@ -2747,13 +2747,20 @@ ul[role="navigation"] a {
           transition: 150ms ease-in-out;
   -webkit-transition-property: all;
           transition-property: all;
+}
+@media only screen and (min-width: 780px) {
+  ul[role="navigation"] {
+    display: block;
+  }
+}
+ul[role="navigation"].desktop-nav a {
   position: relative;
   -webkit-transition: 150ms ease-in-out;
           transition: 150ms ease-in-out;
   -webkit-transition-property: all;
           transition-property: all;
 }
-ul[role="navigation"] a:after {
+ul[role="navigation"].desktop-nav a:after {
   content: "";
   height: 2px;
   width: 100%;
@@ -2769,21 +2776,15 @@ ul[role="navigation"] a:after {
           transition-property: all;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
-ul[role="navigation"] a:hover, ul[role="navigation"] a:active, ul[role="navigation"] a:focus {
+ul[role="navigation"].desktop-nav a:hover, ul[role="navigation"].desktop-nav a:active, ul[role="navigation"].desktop-nav a:focus {
   color: #ffffff;
 }
-ul[role="navigation"] a:hover:after, ul[role="navigation"] a:active:after, ul[role="navigation"] a:focus:after {
+ul[role="navigation"].desktop-nav a:hover:after, ul[role="navigation"].desktop-nav a:active:after, ul[role="navigation"].desktop-nav a:focus:after {
   background: #ffffff;
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1);
 }
-@media only screen and (min-width: 780px) {
-  ul[role="navigation"] {
-    display: block;
-  }
-}
-
 ul[role="navigation"].mobile-nav {
   display: none;
   width: 70%;
@@ -2802,9 +2803,11 @@ ul[role="navigation"].mobile-nav {
   -webkit-transition-property: all;
           transition-property: all;
 }
-ul[role="navigation"].mobile-nav li, ul[role="navigation"].mobile-nav a {
+ul[role="navigation"].mobile-nav li,
+ul[role="navigation"].mobile-nav a {
   display: block;
   margin: 0;
+  padding: 5px;
 }
 ul[role="navigation"].mobile-nav.active {
   display: block;
@@ -2821,7 +2824,7 @@ ul[role="navigation"].mobile-nav.active {
 .hamburger {
   font-size: 2em;
   margin-top: 2px;
-  padding: 0 30px;
+  padding: 0 22px;
   height: 50px;
   line-height: 50px;
   cursor: pointer;
@@ -2840,6 +2843,22 @@ ul[role="navigation"].mobile-nav.active {
 }
 .hamburger:hover, .hamburger:active, .hamburger:focus {
   background: rgba(0, 0, 0, 0.1);
+}
+.hamburger .hamburger-icon {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  width: 40px;
+  text-align: center;
+}
+.hamburger .icon-active {
+  display: none;
+}
+.hamburger.active .icon-active {
+  display: block;
+}
+.hamburger.active .icon-inactive {
+  display: none;
 }
 
 /*  ====================================

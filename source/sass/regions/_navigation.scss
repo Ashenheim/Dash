@@ -20,42 +20,51 @@ ul[role="navigation"] {
 		line-height: 1em;
 		padding: 5px 0;
 		@include transition;
-		@include underline($white) {
-			box-shadow: $shadow;
-		}
 	}
 
 	display: none;
 	@include bp-medium {
 		display: block;
 	}
-}
 
-ul[role="navigation"].mobile-nav {
-	display: none;
-	width: 70%;
-	height: 100%;
-	background: $color-main;
-	z-index: 9;
-	box-shadow: $shadow;
-	transform: translateX(-100%);
-	@include position( fixed, 0px null null 0px );
-	@include transition;
 
-	li, a {
-		display: block;
-		margin: 0;
+
+	&.desktop-nav {
+		a {
+			@include underline($white) {
+				box-shadow: $shadow;
+			}
+		}
 	}
 
-	&.active {
-		display: block;
-		transform: translateX(0);
+	&.mobile-nav {
+		display: none;
+		width: 70%;
+		height: 100%;
+		background: $color-main;
+		z-index: 9;
+		box-shadow: $shadow;
+		transform: translateX(-100%);
+		@include position( fixed, 0px null null 0px );
+		@include transition;
+
+		li,
+		a {
+			display: block;
+			margin: 0;
+			padding: 5px;
+		}
+
+		&.active {
+			display: block;
+			transform: translateX(0);
+		}
+
+		
+		// Hide navigation for desktop
+		@include bp-medium { display: none; }
+
 	}
-
-	
-	// Hide navigation for desktop
-	@include bp-medium { display: none; }
-
 }
 
 
@@ -65,7 +74,7 @@ ul[role="navigation"].mobile-nav {
 
 	font-size: 2em;
 	margin-top: 2px;
-	padding: 0 30px;
+	padding: 0 22px;
 	height: $hamburger-height;
 	line-height: $hamburger-height;
 	cursor: pointer;
@@ -75,5 +84,20 @@ ul[role="navigation"].mobile-nav {
 
 	@include hover {
 		background: rgba( $black, .1 );
+	}
+
+	.hamburger-icon {
+		display: block;
+		height:      $hamburger-height;
+		line-height: $hamburger-height;
+		width: 40px;
+		text-align: center;
+	}
+
+	.icon-active { display: none; }
+	
+	&.active {
+		.icon-active { display: block; }
+		.icon-inactive { display: none; }
 	}
 }

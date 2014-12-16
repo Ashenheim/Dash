@@ -33,9 +33,12 @@
 
 			<nav>
 				
-				<div class="hamburger" id="Hamburger"><i class="fa fa-bars"></i></div>
+				<div class="hamburger" id="Hamburger">
+					<i class="fa fa-bars hamburger-icon icon-inactive"></i>
+					<i class="fa fa-close hamburger-icon icon-active"></i>
+				</div>
 
-				<ul role="navigation">
+				<ul role="navigation" class="desktop-nav">
 					<?php wp_list_pages("title_li="); ?>
 				</ul>
 
