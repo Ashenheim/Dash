@@ -14,7 +14,6 @@
 
 
 <script src="<?php bloginfo('template_url'); ?>/assets/js/global.min.js"></script>
-<script src="http://localhost:9090/livereload.js"></script>
 
 <?php wp_footer(); ?>
 </body>

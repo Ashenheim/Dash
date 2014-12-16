@@ -10,6 +10,8 @@
 
 	<link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_url'); ?>/assets/media/favicon.ico">
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/global.css">
+	
+	<script src="http://localhost:9090/livereload.js"></script>
 
 	<!--[if lt IE 9]>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
