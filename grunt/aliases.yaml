@@ -1,0 +1,14 @@
+default:
+- 'copy'
+- 'jshint'
+- 'concat'
+- 'sass:dev'
+- 'autoprefixer'
+- 'watch'
+
+build:
+- 'jshint'
+- 'concat'
+- 'uglify'
+- 'sass:dist'
+- 'autoprefixer'

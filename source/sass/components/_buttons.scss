@@ -1,0 +1,22 @@
+/*  ====================================
+	Button styling
+	==================================== */
+
+.btn, .button {
+	background: $color-link;
+	color: $white;
+	display: inline-block;
+	padding: 5px 15px;
+	margin-top: 1.4em;
+	@include transition;
+
+	&:hover {
+		color: $white;
+		background: $color-link--hover;
+		transform: translateY(-1px);
+	}
+
+	&:active {
+		transform: translateY(1px);
+	}
+}

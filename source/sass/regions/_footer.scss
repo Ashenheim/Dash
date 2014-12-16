@@ -1,0 +1,14 @@
+/*  ====================================
+    Footer
+    ==================================== */
+
+
+footer.main-footer {
+	margin-top: $block-padding;
+
+	.main-footer_wrap {
+		@extend .container;
+		padding: $block-padding 0;
+		border-top: $border;
+	}
+}

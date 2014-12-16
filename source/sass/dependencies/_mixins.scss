@@ -1,0 +1,157 @@
+/*  ====================================
+	Mixins and functions
+	==================================== */
+
+
+/*  Media queries
+	------------------------------------ */
+	 
+@mixin bp-huge {
+	@media only screen and (min-width: $bp-huge) {
+		@content;
+	}
+}
+
+@mixin bp-large {
+	@media only screen and (min-width: $bp-large) {
+		@content;
+	}
+}
+
+@mixin bp-medium {
+	@media only screen and (min-width: $bp-medium) {
+		@content;
+	}
+}
+
+@mixin bp-small {
+	@media only screen and (min-width: $bp-small) {
+		@content;
+	}
+}
+
+@mixin above($bp) {
+	@media only screen and (min-width: $bp) {
+		@content;
+	}
+}
+
+@mixin below($bp) {
+	@media only screen and (max-width: $bp) {
+		@content;
+	}
+}
+
+
+
+
+
+/*  Mixins and functions
+	------------------------------------ */
+
+
+@function calcRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calcRem($size);
+}
+
+// Add all states for Hover
+@mixin hover {
+  &:hover, &:active, &:focus {
+    @content;
+  }
+}
+
+// Transition
+@mixin transition($properties: null) {
+  transition: $easing;
+  @if $properties {
+    transition-property: $properties;
+  }
+  @else {
+    transition-property: all;
+  }
+}
+
+// * Debug mode,
+// * adds slight background to all inner elements
+@mixin debug {
+	& * {
+		background: rgba(0, 0, 0, 0.05);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#10000000, endColorstr=#10000000);
+	}
+}
+
+
+/**
+ * Font-underline
+ * Adds an animated underline, awesome for links and hoverable elements
+ */
+@mixin underline($color) {
+	
+	position: relative;
+	@include transition;
+
+	&:after {
+		content: "";
+		height: 2px;
+		width: 100%;
+		transform: scale(0,1);
+		@include position( absolute, null null 0px 0px );
+		@include transition;
+		@content;
+	}
+
+	@include hover {
+		color: $color;
+
+		&:after {
+			background: $color;
+			transform: scale(1);
+		}
+	}
+}
+
+
+
+/*  Extends
+    ------------------------------------ */
+
+%hide-text {
+  text-indent: -99999px;
+  direction: ltr;
+}
+
+%visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+%clearfix {
+  *zoom: 1;
+  &:before {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+%vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

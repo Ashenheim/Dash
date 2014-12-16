@@ -1,0 +1,79 @@
+	/* ====================================
+   Navigation
+   ==================================== */
+
+
+
+ul[role="navigation"] {
+	@extend ul.unstyled;
+	margin-top: 15px;
+	float: right;
+
+	li {
+		display: inline-block;
+		& + & { margin-left: $gutter; }
+	}
+
+	a {
+		color: $white;
+		display: inline-block;
+		line-height: 1em;
+		padding: 5px 0;
+		@include transition;
+		@include underline($white) {
+			box-shadow: $shadow;
+		}
+	}
+
+	display: none;
+	@include bp-medium {
+		display: block;
+	}
+}
+
+ul[role="navigation"].mobile-nav {
+	display: none;
+	width: 70%;
+	height: 100%;
+	background: $color-main;
+	z-index: 9;
+	box-shadow: $shadow;
+	transform: translateX(-100%);
+	@include position( fixed, 0px null null 0px );
+	@include transition;
+
+	li, a {
+		display: block;
+		margin: 0;
+	}
+
+	&.active {
+		display: block;
+		transform: translateX(0);
+	}
+
+	
+	// Hide navigation for desktop
+	@include bp-medium { display: none; }
+
+}
+
+
+.hamburger {
+	
+	$hamburger-height: 50px;
+
+	font-size: 2em;
+	margin-top: 2px;
+	padding: 0 30px;
+	height: $hamburger-height;
+	line-height: $hamburger-height;
+	cursor: pointer;
+	@include position( absolute, 0px 0px null null );
+	@include transition( background );
+	@include bp-medium { display: none; }
+
+	@include hover {
+		background: rgba( $black, .1 );
+	}
+}

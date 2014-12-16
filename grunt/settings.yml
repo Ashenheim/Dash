@@ -1,0 +1,11 @@
+# Project data
+name: "Dash-WP-theme"
+version: "0.1.0"
+
+# Directories
+dir_sass:    'source/sass'
+dir_js_src:  'source/js'
+dir_src:     'source'
+dir_build:   './'
+dir_css:     'assets/css'
+dir_js_dist: 'assets/js'

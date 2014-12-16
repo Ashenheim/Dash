@@ -1,0 +1,75 @@
+/* ====================================
+   Content styling
+   ==================================== */
+
+	
+.entry-header {
+	background: $color-sec;
+	padding: 100px $gutter $block-padding;
+	color: $white;
+	text-align: center;
+	text-shadow: $shadow;
+	position: relative;
+	@include transition;
+
+
+	@include bp-medium {
+		padding-top: 220px;
+	}
+
+	.entry-header_banner-image {
+		background: $color-main center center no-repeat;
+		background-size: cover;
+		z-index: 1;
+		@include position( absolute, 0px null null 0px );
+		@include size( 100% );
+
+		.entry-header_banner-image_img {
+			display: none;
+		}
+
+		&.overlay {
+			opacity: .8;
+		}
+	}
+
+	.entry-header_wrapper {
+		position: relative;
+		z-index: 2;
+	}
+
+}
+
+
+.entry-content {
+	margin-top: $block-padding;
+}
+
+
+.entry-footer {
+	margin-top: $block-padding;
+}
+
+
+/*  Content specific styling
+    ------------------------------------ */
+
+
+.entry-article {
+	margin-bottom: $block-padding;
+
+	.entry-header {
+		background: $color-text;
+		padding-top:    60px;
+		padding-bottom: 60px;
+
+		@include bp-medium { 
+			padding-top:    120px;
+			padding-bottom: 120px;
+		}
+	}
+
+	&:first-child .entry-header {
+		padding-top: 220px;
+	}
+}
