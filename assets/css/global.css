@@ -2431,6 +2431,159 @@ header.main-header:after, #foo:after, #foos:after {
 }
 
 /*  ====================================
+    Grid classes
+    ==================================== */
+.container, header.main-header .wrap, .page-title, .page-title .page-title-container, footer.main-footer .main-footer_wrap {
+  max-width: 960px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+@media only screen and (min-width: 480px) {
+  .container, header.main-header .wrap, .page-title, .page-title .page-title-container, footer.main-footer .main-footer_wrap {
+    width: 96%;
+    margin: 0 2%;
+  }
+}
+@media only screen and (min-width: 780px) {
+  .container, header.main-header .wrap, .page-title, .page-title .page-title-container, footer.main-footer .main-footer_wrap {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.row {
+  *zoom: 1;
+  height: 100%;
+}
+.row:before, .row:after {
+  content: "";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+
+@media only screen and (min-width: 960px) {
+  .col-1 {
+    width: 8.33333%;
+    padding-left: 14px;
+    padding-right: 14px;
+    float: left;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .col-2 {
+    width: 16.66667%;
+    padding-left: 14px;
+    padding-right: 14px;
+    float: left;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .col-3 {
+    width: 25%;
+    padding-left: 14px;
+    padding-right: 14px;
+    float: left;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .col-4 {
+    width: 33.33333%;
+    padding-left: 14px;
+    padding-right: 14px;
+    float: left;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .col-5 {
+    width: 41.66667%;
+    padding-left: 14px;
+    padding-right: 14px;
+    float: left;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .col-6 {
+    width: 50%;
+    padding-left: 14px;
+    padding-right: 14px;
+    float: left;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .col-7 {
+    width: 58.33333%;
+    padding-left: 14px;
+    padding-right: 14px;
+    float: left;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .col-8 {
+    width: 66.66667%;
+    padding-left: 14px;
+    padding-right: 14px;
+    float: left;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .col-9 {
+    width: 75%;
+    padding-left: 14px;
+    padding-right: 14px;
+    float: left;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .col-10 {
+    width: 83.33333%;
+    padding-left: 14px;
+    padding-right: 14px;
+    float: left;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .col-11 {
+    width: 91.66667%;
+    padding-left: 14px;
+    padding-right: 14px;
+    float: left;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .col-12 {
+    width: 100%;
+    padding-left: 14px;
+    padding-right: 14px;
+    float: left;
+    height: 100%;
+  }
+}
+
+/*  ====================================
  * General site styling
  * ==================================== */
 *, *:before, *:after {
@@ -2461,7 +2614,6 @@ body {
 
 .page-wrap {
   position: relative;
-  min-height: 2000px;
 }
 
 .push {
@@ -2615,6 +2767,7 @@ ul li {
 
 ul.unstyled li, ul[role="navigation"] li {
   list-style: none;
+  margin-left: 0;
 }
 
 /*	====================================
@@ -2681,34 +2834,13 @@ textarea {
   padding: 2.4em 14px;
 }
 
-.container, header.main-header .wrap, footer.main-footer .main-footer_wrap {
-  max-width: 960px;
-  padding-left: 14px;
-  padding-right: 14px;
-}
-@media only screen and (min-width: 480px) {
-  .container, header.main-header .wrap, footer.main-footer .main-footer_wrap {
-    width: 96%;
-    margin: 0 2%;
-  }
-}
-@media only screen and (min-width: 780px) {
-  .container, header.main-header .wrap, footer.main-footer .main-footer_wrap {
-    width: 90%;
-    margin: 0 auto;
-  }
-}
-
 /* ====================================
    Header styling
    ==================================== */
 header.main-header {
-  color: #ffffff;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   width: 100%;
   z-index: 5;
-  position: absolute;
-  top: 0px;
+  margin: 2.4em 0;
 }
 
 .site-title {
@@ -2716,12 +2848,36 @@ header.main-header {
   float: left;
 }
 .site-title a {
-  color: #ffffff;
   display: inline-block;
   padding: 10px 0;
 }
 .site-title:hover a, .site-title:active a, .site-title:focus a {
   color: #ffffff;
+}
+
+.page-title {
+  background: #EA474B center center no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  padding-top: 40px;
+  -webkit-transition: 150ms ease-in-out;
+          transition: 150ms ease-in-out;
+  -webkit-transition-property: all;
+          transition-property: all;
+}
+@media only screen and (min-width: 780px) {
+  .page-title {
+    padding-top: 160px;
+  }
+}
+.page-title .page-title-container {
+  padding-top: 2.4em;
+  padding-bottom: 2.4em;
+}
+.page-title .page-title-cover-image {
+  display: none;
 }
 
 	/* ====================================
@@ -2734,12 +2890,9 @@ ul[role="navigation"] {
 }
 ul[role="navigation"] li {
   display: inline-block;
-}
-ul[role="navigation"] li + ul[role="navigation"] li {
   margin-left: 14px;
 }
 ul[role="navigation"] a {
-  color: #ffffff;
   display: inline-block;
   line-height: 1em;
   padding: 5px 0;
@@ -2875,72 +3028,81 @@ footer.main-footer .main-footer_wrap {
 /* ====================================
    Content styling
    ==================================== */
-.entry-header {
-  background: #2A2B2F;
-  padding: 100px 14px 2.4em;
-  color: #ffffff;
-  text-align: center;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+.entry-article {
+  margin-top: 2.4em;
+  padding: 14px;
   position: relative;
-  -webkit-transition: 150ms ease-in-out;
-          transition: 150ms ease-in-out;
-  -webkit-transition-property: all;
-          transition-property: all;
+  background: #ffffff;
+  border-top: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
 }
-@media only screen and (min-width: 780px) {
-  .entry-header {
-    padding-top: 220px;
-  }
+
+.entry-header {
+  position: relative;
 }
-.entry-header .entry-header_banner-image {
-  background: #EA474B center center no-repeat;
-  background-size: cover;
+.entry-header .entry-header-wrapper {
+  position: relative;
+  padding: 100px;
   z-index: 1;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+.entry-header .entry-header-banner {
+  background: #2A2B2F center center no-repeat;
+  background-size: cover;
   position: absolute;
   top: 0px;
   left: 0px;
   height: 100%;
   width: 100%;
 }
-.entry-header .entry-header_banner-image .entry-header_banner-image_img {
+.entry-header .entry-header-banner .entry-header-banner--image {
   display: none;
-}
-.entry-header .entry-header_banner-image.overlay {
-  opacity: .8;
-}
-.entry-header .entry-header_wrapper {
-  position: relative;
-  z-index: 2;
 }
 
 .entry-content {
-  margin-top: 2.4em;
+  margin-top: 14px;
 }
 
-.entry-footer {
-  margin-top: 2.4em;
+.entry-cover {
+  background: #2A2B2F center center no-repeat;
+  background-size: cover;
+  height: 470px;
+}
+.entry-cover .entry-cover-image {
+  display: none;
 }
 
-/*  Content specific styling
-    ------------------------------------ */
-.entry-article {
-  margin-bottom: 2.4em;
+.author {
+  padding: 0 14px;
+  position: relative;
+  *zoom: 1;
 }
-.entry-article .entry-header {
-  background: #404040;
-  padding-top: 60px;
-  padding-bottom: 60px;
+.author:before, .author:after {
+  content: "";
+  display: table;
 }
-@media only screen and (min-width: 780px) {
-  .entry-article .entry-header {
-    padding-top: 120px;
-    padding-bottom: 120px;
-  }
+.author:after {
+  clear: both;
 }
-.entry-article:first-child .entry-header {
-  padding-top: 220px;
+.author .author-avatar {
+  float: left;
+}
+.author .author-avatar img.avatar {
+  display: inline-block;
+  padding: 5px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #EEEEEE;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 120px;
+  width: 120px;
+}
+.author .author-info {
+  float: left;
+  margin-left: 14px;
 }
 
 /*! Hello */
-/*! HEY! LISTEN */
-/*! HEY! LISTEN */

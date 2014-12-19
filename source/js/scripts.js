@@ -9,12 +9,6 @@ $(document).ready(function($) {
 		element: $('ul[role="navigation"].mobile-nav')
 	});
 
-	BP.Pageprogression.init({
-		element: $('.progression'),
-		watch: $('.page-wrap')
-	});
-
-
 	/* ------------------------------
 		On load functions
 	------------------------------ */

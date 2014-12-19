@@ -11,11 +11,10 @@ ul[role="navigation"] {
 
 	li {
 		display: inline-block;
-		& + & { margin-left: $gutter; }
+		margin-left: $gutter;
 	}
 
 	a {
-		color: $white;
 		display: inline-block;
 		line-height: 1em;
 		padding: 5px 0;

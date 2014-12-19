@@ -11,10 +11,10 @@ if ( ! function_exists( 'dash_page_title' ) ) :
 
 	function dash_page_title() {
 
-		$title = the_title();
+		$title = get_the_title();
 		$name = bloginfo('name');
 
-		echo $title . ' ' . $name;
+		echo $title . ' test ' . $name;
 
 	}
 

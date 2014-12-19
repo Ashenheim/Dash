@@ -5,11 +5,9 @@
 
 header.main-header {
 	@extend %clearfix;
-	color: $white;
-	text-shadow: $shadow;
 	width: 100%;
 	z-index: 5;
-	@include position( absolute, 0px null null null );
+	margin: $block-padding 0 ;
 
 	.wrap {
 		@extend .container;
@@ -21,7 +19,6 @@ header.main-header {
 	float: left;
 
 	a {
-		color: $white;
 		display: inline-block;
 		padding: 10px 0;
 	}
@@ -30,5 +27,36 @@ header.main-header {
 		a {
 			color: $white;
 		}
+	}
+}
+
+
+.page-title {
+	@extend .container;
+	background: $color-main center center no-repeat;
+	background-size: cover;
+	text-align: center;
+	color: $white;
+	text-shadow: $shadow;
+	padding-top: 40px;
+	@include transition;
+
+	@include bp-medium {
+		padding-top: 160px;
+	}
+
+	.page-title-container {
+		@extend .container;
+		padding-top: $block-padding;
+		padding-bottom: $block-padding;
+	}
+
+
+	.page-title-cover {
+
+	}
+
+	.page-title-cover-image {
+		display: none;
 	}
 }

@@ -2,74 +2,55 @@
    Content styling
    ==================================== */
 
-	
-.entry-header {
-	background: $color-sec;
-	padding: 100px $gutter $block-padding;
-	color: $white;
-	text-align: center;
-	text-shadow: $shadow;
+
+.entry-article {
+
+	margin-top: $block-padding;
+	padding: $gutter;
 	position: relative;
-	@include transition;
+	background: $white;
+	border-top: 1px solid $grey;
+	border-bottom: 1px solid $grey;
+}
 
 
-	@include bp-medium {
-		padding-top: 220px;
+.entry-header {
+	position: relative;
+
+	.entry-header-wrapper {
+		position: relative;
+		padding: 100px;
+		z-index: 1;
+		text-align: center;
+		color: $white;
+		text-shadow: $shadow;
 	}
 
-	.entry-header_banner-image {
-		background: $color-main center center no-repeat;
+	.entry-header-banner {
+		background: $color-sec center center no-repeat;
 		background-size: cover;
-		z-index: 1;
 		@include position( absolute, 0px null null 0px );
 		@include size( 100% );
-
-		.entry-header_banner-image_img {
+		.entry-header-banner--image {
 			display: none;
 		}
-
-		&.overlay {
-			opacity: .8;
-		}
 	}
-
-	.entry-header_wrapper {
-		position: relative;
-		z-index: 2;
-	}
-
 }
 
 
 .entry-content {
-	margin-top: $block-padding;
+	margin-top: $gutter;
 }
 
 
 .entry-footer {
-	margin-top: $block-padding;
+
 }
 
+.entry-cover {
+	background: $color-sec center center no-repeat;
+	background-size: cover;
+	height: 470px;
 
-/*  Content specific styling
-    ------------------------------------ */
-
-
-.entry-article {
-	margin-bottom: $block-padding;
-
-	.entry-header {
-		background: $color-text;
-		padding-top:    60px;
-		padding-bottom: 60px;
-
-		@include bp-medium { 
-			padding-top:    120px;
-			padding-bottom: 120px;
-		}
-	}
-
-	&:first-child .entry-header {
-		padding-top: 220px;
-	}
+	.entry-cover-image { display: none; }
 }

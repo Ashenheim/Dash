@@ -1,0 +1,25 @@
+.author {
+	padding: 0 $gutter;
+	position: relative;
+	@include cf;
+
+	.author-avatar {
+		float: left;
+
+		img.avatar {
+			display: inline-block;
+			padding: 5px;
+			margin: 0 auto;
+			background: $white;
+			border: 1px solid $grey;
+			border-radius: 50%;
+			overflow: hidden;
+			@include size( 120px );
+		}
+	}
+
+	.author-info {
+		float: left;
+		margin-left: $gutter;
+	}
+}

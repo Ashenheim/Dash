@@ -14,20 +14,19 @@
 		$imageLarge = $image['sizes']['large'];
 
 	endif;
-
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('entry-article'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('entry-page'); ?>>
 	
 	<header class="entry-header">
 		
-		<div class="entry-header_wrapper">
+		<div class="entry-header-wrapper">
 			<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
 		</div>
-		
+
 		<?php if ( $image ) : ?>
-		<div class="entry-header_banner-image overlay" style="background-image: url(<?php echo $imageLarge; ?>);">
-			<img class="entry-header_banner-image_img" src="<?php echo $imageLarge; ?>" alt="<?php echo $imageTitle; ?>">
+		<div class="entry-header-banner" style="background-image: url(<?php echo $imageLarge; ?>);">
+			<img class="entry-header-banner--image" src="<?php echo $imageLarge; ?>" alt="<?php echo $imageTitle; ?>">
 		</div>
 		<?php endif; ?>
 
@@ -36,22 +35,15 @@
 	<section class="entry-content">
 		<div class="container">
 			
-			<?php the_excerpt(); ?>
+			<?php the_content(); ?>
 
 		</div>
 	</section>
 
 	<footer class="entry-footer">
 		<div class="container">
-			<?php dash_categories(); ?>
 			<?php edit_post_link(); ?>
 		</div>
-		<div class="author-info">
-			
-			<?php include 'author.php'; ?>
-
-		</div>
-
 	</footer>
 
 </article>

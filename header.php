@@ -51,7 +51,3 @@
 	
 		</div>
 	</header>
-
-	<div class="progression">
-		<span class="progression-bar" id="progressionBar"></span>
-	</div>

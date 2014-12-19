@@ -1,5 +1,11 @@
 <?php
 
+
+include 'inc/dash_profilepage.php';
+ 
+add_filter( 'user_contactmethods', 'dash_contact_methods' );
+
+
 // Rewrites the Edit post link output
 function custom_edit_post_link($output) {
  $output = str_replace('class="post-edit-link"', 'class="btn edit-button"', $output);

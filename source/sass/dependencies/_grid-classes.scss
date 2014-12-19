@@ -1,0 +1,37 @@
+/*  ====================================
+    Grid classes
+    ==================================== */
+
+.container {
+	max-width: $site-width;
+	padding-left:  $gutter;
+	padding-right: $gutter;
+
+	@include bp-small {
+		width: 96%;
+		margin: 0 2%;
+	}
+	@include bp-medium {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+.row {
+	@include cf;
+	height: 100%;
+}
+
+$columns : 12;
+
+@for $i from 1 through $columns {
+	.col-#{$i} {
+		@include bp-large {
+			width: ( 100% / $columns ) * $i;
+			padding-left: $gutter;
+			padding-right: $gutter;
+			float: left;
+			height: 100%;
+		}
+	}
+}
