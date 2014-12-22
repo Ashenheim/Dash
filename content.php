@@ -16,9 +16,9 @@
 	endif;
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('entry-page'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('entry-page fade-animation'); ?>>
 	
-	<header class="entry-header">
+	<header class="entry-header <?php if ( $image ) { echo 'banner'; } ?>">
 		
 		<div class="entry-header-wrapper">
 			<?php the_title('<h1 class="entry-title">', '</h1>'); ?>

@@ -1,3 +1,7 @@
+$('html')
+	.removeClass('no-js')
+	.addClass('js');
+
 $(document).ready(function($) {
 
 	/* ------------------------------
@@ -12,12 +16,7 @@ $(document).ready(function($) {
 	/* ------------------------------
 		On load functions
 	------------------------------ */
-
-	if(!Modernizr.svg) {
-		$('img[src$=".svg"]').each(function() {
-			// Replaces all SVG with PNG's
-			$(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
-		});
-	}
+	
+	Animation();
 
 });

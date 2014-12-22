@@ -6,7 +6,27 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<title><?php dash_page_title(); ?></title>
+	<title>
+	<?php
+		if (function_exists('is_tag') && is_tag()) { 
+			single_tag_title("Tag Archive for &quot;"); echo '&quot; - ';
+		} elseif (is_archive()) { 
+			wp_title(''); echo ' Archive - '; } 
+		elseif (is_search()) { 
+			echo 'Search for &quot;'.wp_specialchars($s).'&quot; - '; 
+		} elseif (!(is_404()) && (is_single()) || (is_page())) { 
+			wp_title(''); echo ' - ';
+		} elseif (is_404()) { 
+			echo 'Not Found - ';
+		} if (is_home()) { 
+			bloginfo('name'); echo ' - '; bloginfo('description');
+		} else {
+			bloginfo('name'); }
+		if ($paged>1) { 
+			echo ' - page '. $paged;
+		}
+	?>
+	</title>
 
 	<link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_url'); ?>/assets/media/favicon.ico">
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/global.css">
@@ -22,7 +42,7 @@
 <body>
 
 
-<div class="page-wrap">
+<div class="page-wrap fade-animation">
 
 	<header class="main-header">
 		<div class="wrap">
@@ -41,11 +61,25 @@
 				</div>
 
 				<ul role="navigation" class="desktop-nav">
-					<?php wp_list_pages("title_li="); ?>
+					<?php
+					wp_nav_menu (
+						array (
+							'theme_location' => 'header-nav',
+							'container' => false
+						)
+					);
+					?>
 				</ul>
 
 				<ul role="navigation" class="mobile-nav">
-					<?php wp_list_pages("title_li="); ?>
+					<?php
+					wp_nav_menu (
+						array (
+							'theme_location' => 'header-nav',
+							'container' => false
+						)
+					);
+					?>
 				</ul>
 			</nav>
 	

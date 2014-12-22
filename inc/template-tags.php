@@ -3,29 +3,12 @@
  * Custom template tags
  */
 
-/* ====================================
-   Page title
-   ==================================== */
-
-if ( ! function_exists( 'dash_page_title' ) ) :
-
-	function dash_page_title() {
-
-		$title = get_the_title();
-		$name = bloginfo('name');
-
-		echo $title . ' test ' . $name;
-
-	}
-
-endif;
-
 
 
 
 
 /* ====================================
-   Page title
+   Categories
    ==================================== */
 
 if ( ! function_exists( 'dash_categories' ) ) :

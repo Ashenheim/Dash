@@ -1,0 +1,23 @@
+/*  ====================================
+    Animations triggered by JQuery
+    ==================================== */
+
+html.js {
+	.fade-animation {
+		opacity: 0;
+		transform: translateY(10px);
+		@include transition;
+		.fade-animation {
+			transform: translateX(-2%);
+
+			&.fade-animation-end {
+				transform: translateX(0);
+			}
+		}
+
+	}
+	.fade-animation-end {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

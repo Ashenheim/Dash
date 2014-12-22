@@ -7,7 +7,7 @@ header.main-header {
 	@extend %clearfix;
 	width: 100%;
 	z-index: 5;
-	margin: $block-padding 0 ;
+	margin-bottom: $block-padding;
 
 	.wrap {
 		@extend .container;
@@ -25,7 +25,7 @@ header.main-header {
 
 	@include hover {
 		a {
-			color: $white;
+			color: $black;
 		}
 	}
 }

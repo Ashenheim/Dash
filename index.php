@@ -28,12 +28,6 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<section class="page-title">
-				<div class="page-title-container">
-					<h1><?php echo $pagename; ?></h1>
-				</div>
-			</section>
-
 		<?php if ( have_posts() ) : ?>
 
 			<div class="article_container clearfix">

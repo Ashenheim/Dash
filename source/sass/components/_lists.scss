@@ -1,0 +1,26 @@
+/* ====================================
+	List styling (ul, ol, dl)
+	==================================== */
+
+ul {
+	margin: 0;
+	padding: 0;
+	li {
+		margin-left: 15px;
+	}
+
+	.bullet {
+		display: inline-block;
+		width: 1em;
+		margin-right: $base-spacing;
+		text-align: center;
+	}
+}	
+
+
+ul.unstyled {
+	li {
+		list-style: none;
+		margin-left: 0;
+	}
+}

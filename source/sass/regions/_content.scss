@@ -4,33 +4,45 @@
 
 
 .entry-article {
-
 	margin-top: $block-padding;
-	padding: $gutter;
+	padding: 0 $gutter;
 	position: relative;
 	background: $white;
 	border-top: 1px solid $grey;
 	border-bottom: 1px solid $grey;
+	// box-shadow: $shadow;
+}
+
+
+.entry-container {
+	padding-top: $block-padding;
+	padding-bottom: $block-padding;
 }
 
 
 .entry-header {
 	position: relative;
-
-	.entry-header-wrapper {
-		position: relative;
-		padding: 100px;
-		z-index: 1;
-		text-align: center;
+	
+	&.banner {
+		background: color-main;
+		padding: 100px $gutter;
 		color: $white;
 		text-shadow: $shadow;
 	}
+
+	.entry-header-wrapper {
+		position: relative;
+		z-index: 1;
+		text-align: center;
+	}
+
 
 	.entry-header-banner {
 		background: $color-sec center center no-repeat;
 		background-size: cover;
 		@include position( absolute, 0px null null 0px );
 		@include size( 100% );
+		opacity: .9;
 		.entry-header-banner--image {
 			display: none;
 		}
@@ -50,7 +62,12 @@
 .entry-cover {
 	background: $color-sec center center no-repeat;
 	background-size: cover;
-	height: 470px;
+	height: 200px;
+	@include transition;
+
+	@include bp-medium {
+		height: 470px;
+	}
 
 	.entry-cover-image { display: none; }
 }
