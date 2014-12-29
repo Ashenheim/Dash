@@ -2,17 +2,18 @@
     Animation loop on Pageload
     ==================================== */
 
-function Animation (argument) {
-	var target   = 'fade-animation',
-	    trigger  = 'fade-animation-end',
-	    time     = 150;
+function Animation ($param) {
+	var element  = $param,
+	    trigger  = $param + "-end",
+	    time     = 250;
 
-	$( '.' + target ).each(function(i) {
+	$( '.' + element).each(function(i) {
 
 		var $this = $( this );
 
 		setTimeout( function(){ 
 			$this.addClass( trigger );
+			// console.log( trigger + " added to " + element );
 		}, time*i);
 
 

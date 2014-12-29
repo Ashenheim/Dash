@@ -17,7 +17,7 @@
 		} elseif (!(is_404()) && (is_single()) || (is_page())) { 
 			wp_title(''); echo ' - ';
 		} elseif (is_404()) { 
-			echo 'Not Found - ';
+			echo 'Niet gevonden - ';
 		} if (is_home()) { 
 			bloginfo('name'); echo ' - '; bloginfo('description');
 		} else {
@@ -41,8 +41,26 @@
 </head>
 <body>
 
+<?php /*
+<header class="admin-header">
+	<ul class="admin-nav">
+		<?php
 
-<div class="page-wrap fade-animation">
+			$params = array(
+				'theme_location'  => 'admin-nav',
+				'container' => false,
+				'items_wrap' => '%3$s'
+			);
+
+			wp_nav_menu( $params );
+
+		?>
+	</ul>
+</header>
+*/ ?>
+
+<div class="page-wrap animation_fade">
+
 
 	<header class="main-header">
 		<div class="wrap">
@@ -62,24 +80,20 @@
 
 				<ul role="navigation" class="desktop-nav">
 					<?php
-					wp_nav_menu (
-						array (
-							'theme_location' => 'header-nav',
-							'container' => false
-						)
-					);
+
+						$params = array(
+							'theme_location'  => 'header-nav',
+							'container' => false,
+							'items_wrap' => '%3$s'
+						);
+
+						wp_nav_menu( $params );
+
 					?>
 				</ul>
 
 				<ul role="navigation" class="mobile-nav">
-					<?php
-					wp_nav_menu (
-						array (
-							'theme_location' => 'header-nav',
-							'container' => false
-						)
-					);
-					?>
+					<?php wp_nav_menu( $params ); ?>
 				</ul>
 			</nav>
 	

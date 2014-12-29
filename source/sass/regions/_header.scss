@@ -8,9 +8,13 @@ header.main-header {
 	width: 100%;
 	z-index: 5;
 	margin-bottom: $block-padding;
+	padding-top: $block-padding;
+	padding-bottom: $block-padding;
 
 	.wrap {
 		@extend .container;
+		@extend %clearfix;
+		position: relative;
 	}
 }
 
@@ -21,12 +25,6 @@ header.main-header {
 	a {
 		display: inline-block;
 		padding: 10px 0;
-	}
-
-	@include hover {
-		a {
-			color: $black;
-		}
 	}
 }
 
@@ -59,4 +57,12 @@ header.main-header {
 	.page-title-cover-image {
 		display: none;
 	}
+}
+
+.home-header {
+	color: $white;
+	text-shadow: 0 1px 1px rgba( $black, .4 );
+	background: $color-sec center center no-repeat;
+	background-size: cover;
+	padding-top: $block-padding;
 }

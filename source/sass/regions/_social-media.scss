@@ -1,0 +1,26 @@
+/* ====================================
+   Content styling
+   ==================================== */
+
+.social-media {
+	@include cf;
+	vertical-align: middle;
+
+	[class*='social'] {
+		@extend .rounded-btn;
+	}
+
+	.social-twitter {
+		background: $color-twitter;
+		@include hover {
+			background: darken( $color-twitter, 10% );
+		}
+	}
+
+	.social-facebook {
+		background: $color-facebook;
+		@include hover {
+			background: darken( $color-facebook, 10% );
+		}
+	}
+}

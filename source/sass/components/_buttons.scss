@@ -2,20 +2,59 @@
 	Button styling
 	==================================== */
 
-.btn, .button {
+.btn {
 	background: $color-link;
 	color: $white;
 	display: inline-block;
 	padding: 5px 15px;
-	margin-top: 1.4em;
 	@include transition;
 
-	&:hover {
+	@include hover {
 		color: $white;
 		background: $color-link--hover;
 	}
 
 	&:active {
 		transform: translateY(1px);
+	}
+}
+
+.rounded-btn {
+	display: inline-block;
+	color: $white;
+	text-align: center;
+	padding: $gutter;
+	font-size: 1.5em;
+	line-height: 1em;
+	margin-left: 5px;
+	border-radius: 50%;
+	vertical-align: middle;
+	background: $color-link;
+	color: $white;
+	@include size( 50px );
+	@include transition;
+
+	@include hover {
+		transform: scale(1.2);
+		background: $color-link--hover;
+		color: $white;
+	}
+}
+
+.cta-btn {
+	font-size: 1.6em;
+	padding: $gutter;
+	display: inline-block;
+	text-align: center;
+	color: $white;
+	background: rgba( $black, .5 );
+	border: 3px solid $white;
+	border-radius: 5px;
+	@include transition;
+
+	@include hover {
+		color: $color-text;
+		background: $white;
+		text-shadow: none;
 	}
 }

@@ -1,0 +1,13 @@
+/* ====================================
+	Layout styles
+	==================================== */
+
+
+.box {
+	background: $white;
+	box-shadow: $shadow;
+	padding-top: $block-padding;
+	padding-bottom: $block-padding;
+	margin-bottom: $block-padding;
+	overflow: hidden;
+}

@@ -1,6 +1,4 @@
-$('html')
-	.removeClass('no-js')
-	.addClass('js');
+$('html').removeClass('no-js').addClass('js');
 
 $(document).ready(function($) {
 
@@ -17,6 +15,9 @@ $(document).ready(function($) {
 		On load functions
 	------------------------------ */
 	
-	Animation();
+	Animation('animation_fade');
+	Animation('animation_slide');
+
+	pageScroll();
 
 });

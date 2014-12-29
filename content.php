@@ -16,7 +16,7 @@
 	endif;
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('entry-page fade-animation'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('entry-page animation_slide'); ?>>
 	
 	<header class="entry-header <?php if ( $image ) { echo 'banner'; } ?>">
 		
@@ -35,7 +35,7 @@
 	<section class="entry-content">
 		<div class="container">
 			
-			<?php the_content(); ?>
+			<span class="entry"><?php the_content(); ?></span>
 
 		</div>
 	</section>

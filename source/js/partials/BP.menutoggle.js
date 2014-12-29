@@ -20,6 +20,7 @@ BP.menutoggle = function($) {
 
 		trigger.toggleClass('active');
 		element.toggleClass('active');
+		$('html').toggleClass('is-fixed');
 		console.log("Foo");
 
 	};

@@ -1,0 +1,39 @@
+/*  ====================================
+	General site styling
+	==================================== */
+
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	height: 100% !important;
+	min-height: 100%;
+
+	&.is-fixed {
+		overflow: hidden;
+	}
+}
+
+body {
+	font: {
+		size: $font-size;
+		family: $font-family;
+		smoothing: antialiased;
+	};
+	color: $color-text;
+	background: $color-background;
+}
+
+::selection {
+	background: $color-accent;
+	color: $white;
+}
+
+.page-wrap {
+	position: relative;
+	// max-width: $site-width;
+	// margin: 0 auto;
+}

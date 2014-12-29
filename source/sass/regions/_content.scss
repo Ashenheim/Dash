@@ -5,12 +5,11 @@
 
 .entry-article {
 	margin-top: $block-padding;
-	padding: 0 $gutter;
+	margin-bottom: $block-padding;
 	position: relative;
-	background: $white;
 	border-top: 1px solid $grey;
 	border-bottom: 1px solid $grey;
-	// box-shadow: $shadow;
+	// box-shadow: 0 0 5px rgba( $black, .1 );
 }
 
 
@@ -22,18 +21,35 @@
 
 .entry-header {
 	position: relative;
+	margin-bottom: $block-padding;
 	
 	&.banner {
 		background: color-main;
-		padding: 100px $gutter;
+		height: 200px;
+		padding: $gutter;
 		color: $white;
-		text-shadow: $shadow;
+		text-shadow: 0 1px 5px rgba( $black, .5 );
+		@include transition;
+		@include bp-medium {
+			height: 400px;
+		}
+
+		a {
+			color: $white;
+			opacity: .8;
+
+			@include hover {
+				color: $white;
+				opacity: 1;
+			}
+		}
 	}
 
 	.entry-header-wrapper {
 		position: relative;
 		z-index: 1;
 		text-align: center;
+		@extend %vertical-align;
 	}
 
 
@@ -42,7 +58,7 @@
 		background-size: cover;
 		@include position( absolute, 0px null null 0px );
 		@include size( 100% );
-		opacity: .9;
+		opacity: 1;
 		.entry-header-banner--image {
 			display: none;
 		}
@@ -50,19 +66,21 @@
 }
 
 
-.entry-content {
-	margin-top: $gutter;
+.entry-content,
+.entry-info {
+	margin-bottom: $gutter;
 }
-
 
 .entry-footer {
 
 }
 
+
 .entry-cover {
 	background: $color-sec center center no-repeat;
 	background-size: cover;
 	height: 200px;
+
 	@include transition;
 
 	@include bp-medium {
@@ -70,4 +88,30 @@
 	}
 
 	.entry-cover-image { display: none; }
+}
+
+
+.page-nav {
+	background: $white;
+	@include cf;
+	padding: $gutter;
+	text-align: center;
+
+	.prev {
+		@extend .float-left;
+	}
+
+	.next {
+		@extend .float-right;
+	}
+
+	.page-numbers {
+		@extend .btn;
+
+		&.current,
+		&.dots {
+			background: none;
+			color: $color-text;
+		}
+	}
 }

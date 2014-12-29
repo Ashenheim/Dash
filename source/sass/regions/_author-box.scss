@@ -7,13 +7,13 @@
 
 		img.avatar {
 			display: inline-block;
-			padding: $base-spacing;
+			padding: 5px;
 			margin: 0 auto;
 			background: $white;
 			border: 1px solid $grey;
 			border-radius: 50%;
 			overflow: hidden;
-			@include size( 80px );
+			@include size( 150px );
 		}
 	}
 
@@ -25,7 +25,4 @@
 
 .author-box {
 	padding: $gutter 0;
-	background: $white;
-	border-top: 1px solid $grey;
-	margin-top: $block-padding;
 }

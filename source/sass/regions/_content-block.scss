@@ -1,0 +1,23 @@
+/*  ====================================
+	Content block
+	Used for the homepage
+	==================================== */
+
+.entry-block {
+	width: 50%;
+	float: left;
+	@include transition;
+	@include bp-medium {
+		width: ( 100% / 3 );
+	}
+	@include bp-large {
+		width: ( 100% / 5 );
+	}
+
+	.entry-header { margin-bottom: 0; }
+
+	@include hover {
+		opacity: .9;
+		filter: saturate(120%);
+	}
+}

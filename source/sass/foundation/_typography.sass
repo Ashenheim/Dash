@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6
 	font-weight: 700
 	line-height: 1.1em
 	margin-top: 0
-	margin-bottom: $base-spacing
+	margin-bottom: .4em
 
 h1, .alpha
 	font-size: 2em
@@ -20,7 +20,7 @@ h2, .beta
 	font-size: 1.8em
 
 h3, .gamma
-	font-size: 1.7em
+	font-size: 1.6em
 
 h4, .delta
 	font-size: 1.5em
@@ -50,7 +50,6 @@ p a
 	color: $color-link
 	font-weight: 700
 	position: relative
-	@include underline($color-link--hover)
 
 //
 	Separate elements
@@ -58,8 +57,9 @@ p a
 
 hr
 	border: none
-	border-bottom: 1px solid $color-accent
+	border-bottom: 1px solid $grey
 	width: 100%
+	margin-bottom: $base-spacing
 
 blockquote
 	background: #f9f9f9
@@ -86,10 +86,27 @@ blockquote
 	------------------------------------
 
 .align-left
+	display: block
 	text-align: left
 
 .align-center
+	display: block
 	text-align: center
 
 .align-right
+	display: block
 	text-align: right
+
+.float-left
+	float: left
+
+.float-right
+	float: right
+
+.title
+	margin-bottom: .4em
+
+.entry-title
+	font-size: 3em
+	a
+		color: $black

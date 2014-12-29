@@ -3,6 +3,7 @@ module.exports = {
 	dev: {
 		src: [
 			'<%= settings.dir_js_src %>/vendors/jquery-1.11.1.js',
+			'<%= settings.dir_js_src %>/vendors/debounce.js',
 			// '<%= settings.dir_js_src %>/vendors/modernizr.js',
 			'<%= settings.dir_js_src %>/partials/**/*.js',
 			'<%= settings.dir_js_src %>/*.js'

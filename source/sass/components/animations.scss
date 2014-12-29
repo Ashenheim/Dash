@@ -3,21 +3,30 @@
     ==================================== */
 
 html.js {
-	.fade-animation {
-		opacity: 0;
-		transform: translateY(10px);
-		@include transition;
-		.fade-animation {
-			transform: translateX(-2%);
 
-			&.fade-animation-end {
-				transform: translateX(0);
-			}
-		}
-
+	.animation {
+		transition: all 500ms $ease-out-cubic;
 	}
-	.fade-animation-end {
-		opacity: 1;
-		transform: translateY(0);
+
+	.animation_fade {
+		opacity: 0;
+		transform: translateY( 10px );
+		@extend .animation;
+
+		&.animation_fade-end {
+			opacity: 1;
+			transform: translateY( 0 );
+		}
+	}
+	
+	.animation_slide {
+		opacity: 0;
+		transform: translateX( -100% );
+		@extend .animation;
+
+		&.animation_slide-end {
+			opacity: 1;
+			transform: translateX( 0 );
+		}
 	}
 }

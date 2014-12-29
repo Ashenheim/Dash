@@ -1,0 +1,22 @@
+/* ====================================
+   Content styling
+   ==================================== */
+
+header.admin-header {
+	background: $color-sec;
+	padding: $gutter;
+	text-shadow: 0 1px 0 $black;
+	@include cf;
+
+	ul {
+		@extend .unstyled;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	li + li {
+		margin-left: $base-spacing;
+	}
+}

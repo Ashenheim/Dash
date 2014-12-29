@@ -6,13 +6,13 @@ ul {
 	margin: 0;
 	padding: 0;
 	li {
-		margin-left: 15px;
+		margin-left: 18px;
 	}
 
 	.bullet {
 		display: inline-block;
 		width: 1em;
-		margin-right: $base-spacing;
+		margin-right: .2em;
 		text-align: center;
 	}
 }	
